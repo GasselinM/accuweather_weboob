@@ -2,7 +2,7 @@
 <h4> Module for weboob applications (http://weboob.org/)</h4>
 This module has been done for Wetboobs application and CapWeather capability
 
-<U>Exemple of results:</U>
+<U><b>Exemple of results:</b></U>
 
 <b>wetboobs:/cities></b> cities paris
  1 — Paris, State: Ville de Paris, Country: France (accuweather)<br>
@@ -16,7 +16,7 @@ This module has been done for Wetboobs application and CapWeather capability
  9 — Paris-17E-Arrondissement, State: Ville de Paris, Country: France (accuweather)<br>
 10 — Paris-18E-Arrondissement, State: Ville de Paris, Country: France (accuweather)
 
-<b>wetboobs:/cities></b> current 1
+<b>wetboobs:/cities></b> current 1<br>
 2018-04-02: 13 °C - Real feel 10°C - Light rain - UV 0 - Wind < 11 km/h
 
 
