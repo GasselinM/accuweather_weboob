@@ -4,7 +4,7 @@ This module has been done for Wetboobs application and CapWeather capability to 
 
 <U><b>Exemple of results:</b></U>
 
-<b>wetboobs:/cities></b> cities paris
+<b>wetboobs:/cities></b> cities paris<br>
  1 — Paris, State: Ville de Paris, Country: France (accuweather)<br>
  2 — Paris-10E-Arrondissement, State: Ville de Paris, Country: France (accuweather)<br>
  3 — Paris-11E-Arrondissement, State: Ville de Paris, Country: France (accuweather)<br>
