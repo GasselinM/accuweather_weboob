@@ -1,6 +1,6 @@
 <h1> Accuweather module </h1>
 <h4> Module for weboob applications (http://weboob.org/)</h4>
-This module has been done for Wetboobs application and CapWeather capability
+This module has been done for Wetboobs application and CapWeather capability to scrap weather on accuweather website (https://www.accuweather.com/)
 
 <U><b>Exemple of results:</b></U>
 
