@@ -33,17 +33,24 @@ class AccuweatherModule(Module, CapWeather):
     MAINTAINER = u'Gasselin Maxime'
     EMAIL = 'm.gasselin@hotmail.fr'
     LICENSE = 'AGPLv3+'
-    VERSION = '1.3'
+    VERSION = '1.4'
 
     BROWSER = AccuweatherBrowser
-    
-    def get_current(self, _id):  
+
+    def iter_city_search(self, pattern):
+        """ Method to search for a city pattern:"""
+        return self.browser.iter_city_search(pattern)
+
+    def get_current(self, _id):
+        """ Method to get the current data
+        whith the city of choice"""
         return self.browser.get_current(_id)
 
-    def iter_forecast(self, _id):  
+    def iter_forecast(self, _id):
+        """ Method to get the forecasts data 
+        for the next days whith the city of choice"""
         return self.browser.iter_forecast(_id)
 
-    def iter_city_search(self, pattern):  
-        return self.browser.iter_city_search(pattern)
     
+
 

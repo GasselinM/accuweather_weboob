@@ -24,23 +24,27 @@ from .pages import WeatherPage, SearchCitiesPage
 __all__ = ['AccuweatherBrowser']
 
 class AccuweatherBrowser(PagesBrowser):
-    BASEURL = ''
+    """ URLs where to scrap elements, with the 
+    help of Accuweather's API"""
     cities = URL('https://api.accuweather.com/locations/v1/cities/autocomplete\?q=(?P<pattern>.*)&apikey=d41dfd5e8a1748d0970cba6637647d96&language=en-us&get_param=value', SearchCitiesPage)
     weather = URL('https://www.accuweather.com/en/fr/city/(?P<city_id1>.*)/current-weather/(?P<city_id2>.*)',  WeatherPage)
     forecast = URL('https://www.accuweather.com/en/fr/city/(?P<city_id1>.*)/daily-weather-forecast/(?P<city_id2>.*)', WeatherPage)
-    #https://www.accuweather.com/en/fr/paris/623/weather-forecast/623
     
     def iter_city_search(self, pattern):
+        """Method to connect with the API 
+        with the city of choice"""
         return self.cities.go(pattern=pattern).iter_cities()
 
+    def get_current(self, _id):
+        """Method to connect with the accuweather 
+        website with the Curent tool"""
+        self.weather.go(city_id1=_id,city_id2=_id)
+        return self.page.get_current()
+
     def iter_forecast(self, _id):
+        """Method to connect with the accuweather
+        website with the Forecasts tool"""
         self.forecast.go(city_id1=_id,city_id2=_id)
         return self.page.iter_forecast()
 
-    def get_current(self, _id):
-        self.weather.go(city_id1=_id,city_id2=_id)
-        return self.page.get_current()
-"""
-    def get_current(self, city):
-        return self.weather.go(city_id=city.id, city_name=city.name).get_current()
-"""
+    
